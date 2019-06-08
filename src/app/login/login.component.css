@@ -1,0 +1,26 @@
+.login-container{
+  margin-top: 50px;
+}
+
+.login-container{
+
+}
+
+.login-field-full-width{
+  width: 100%;
+}
+
+.login-btn{
+  color: #fff !important;
+}
+
+.login-title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/***********login **/
+.mat-card-header-text {
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <div class="col-sm-4">
+          <h4 class="title">Liste des Collaborateurs</h4>
+          <p class="category">{{collaborateurs.length}} collaborateurs en Total</p>
+          </div>
+          <div class="col-sm-8">
+            <div class="pull-right">
+              <mat-form-field >
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </mat-form-field>
+            </div>
+          </div>
+
+        </div>
+
+<div class="content table-responsive table-full-width">
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Id">
+          <mat-header-cell *matHeaderCellDef> Ref </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
+        </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Civilite">
+        <mat-header-cell *matHeaderCellDef> Civilite </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Civilite}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Nom">
+        <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Nom}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Prenom">
+        <mat-header-cell *matHeaderCellDef> Prenom </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Prenom}} </mat-cell>
+      </ng-container>
+
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Birthday">
+        <mat-header-cell *matHeaderCellDef> Birthday </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Birthday}} </mat-cell>
+      </ng-container>
+
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Status}} </mat-cell>
+      </ng-container>
+
+      
+      <!-- Name Column -->
+      <ng-container matColumnDef="Matricule">
+        <mat-header-cell *matHeaderCellDef> Matricule </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Matricule}} </mat-cell>
+      </ng-container>
+      
+      <!-- Name Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button class="btn btn-sm btn-primary" (click)="editCollaborateur(element)"> <i class="glyphicon glyphicon-edit"></i></button>
+          <button class="btn btn-sm btn-danger" (click)="deleteCollaborateur(element)"> <i class="glyphicon glyphicon-trash"></i></button>
+        </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+<simple-notifications [options]="options"></simple-notifications>
+</div>

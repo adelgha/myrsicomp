@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <div class="col-sm-4">
+          <h4 class="title">Liste des Clients</h4>
+          <p class="category">{{clients.length}} clients en Total</p>
+          </div>
+          <div class="col-sm-8">
+            <div class="pull-right">
+              <mat-form-field >
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </mat-form-field>
+            </div>
+          </div>
+
+        </div>
+        <div class="content table-responsive table-full-width">
+          <div class="example-container mat-elevation-z8">
+            <mat-table #table [dataSource]="dataSource">
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="codeClient">
+                <mat-header-cell *matHeaderCellDef> Code Client </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.codeClient}} </mat-cell>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="raisonSocial">
+                <mat-header-cell *matHeaderCellDef> raison Social </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.raisonSocial}} </mat-cell>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.status === true ? "Actif" : "Inactif"}} </mat-cell>
+              </ng-container>
+
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="facturesImpayes">
+                <mat-header-cell *matHeaderCellDef> Factures Impayes </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.facturesImpayes}} </mat-cell>
+              </ng-container>
+
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="nbrCollaborateurs">
+                <mat-header-cell *matHeaderCellDef> Nbr Collaborateurs </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.nbrCollaborateurs}} </mat-cell>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <button class="btn btn-sm btn-primary" (click)="editClient(element)"> <i class="glyphicon glyphicon-edit"></i></button>
+                  <button class="btn btn-sm btn-danger" (click)="deleteClient(element)"> <i class="glyphicon glyphicon-trash"></i></button>
+                </mat-cell>
+              </ng-container>
+
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

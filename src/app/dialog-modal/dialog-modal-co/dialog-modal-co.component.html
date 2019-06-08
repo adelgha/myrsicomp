@@ -1,0 +1,11 @@
+
+<h1 mat-dialog-title><i class="glyphicon glyphicon-edit"></i>&nbsp; Edit {{data.Nom}} ?</h1>
+<div mat-dialog-content>
+ <p>Id: <input type="text" [(ngModel)]="idcollaborateur" class="form-control" value= {{data.Id}} id="idcollaborateur"></p>
+ <p>Name: <input type="text" [(ngModel)]="nomcollaborateur" class="form-control" value= {{data.Nom}}  id="nomcollaborateur"></p>
+ <p>Prénom: <input type="text" [(ngModel)]="prenomcollaborateur" class="form-control" value= {{data.Prenom}}  id="prenomcollaborateur"></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.Id" tabindex="2">Ok</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+</div>

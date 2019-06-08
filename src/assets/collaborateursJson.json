@@ -1,0 +1,20 @@
+[
+    {
+        "Id": 1,
+        "Civilite": "M",
+        "Nom": "Adel",
+        "Prenom": "gh",
+        "Birthday": "12/12/2010",
+        "Status": "Single",
+        "Matricule": "KZr32"
+    },
+    {
+        "Id": 2,
+        "Civilite": "M",
+        "Nom": "Yassine",
+        "Prenom": "prenom",
+        "Birthday": "12/10/2017",
+        "Status": "Married",
+        "Matricule": "EZr32"
+    }
+]

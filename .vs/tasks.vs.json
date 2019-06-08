@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-index",
+      "appliesTo": "src/index.html",
+      "type": "command"
+    },
+    {
+      "taskName": "task-index",
+      "appliesTo": "src/index.html",
+      "type": "command"
+    }
+  ]
+}
